@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Container, { Count, ButtonGroup } from './App.styled.js';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [count, setCount] = useState(0);
+  const [items, setItems] = useState(['Item 1', 'Item 2']);
+  const [user, setUser] = useState({ name: 'John', age: 25 });
+  const [logs, setLogs] = useState([]);
+
+  const handleClick = (type) => {
+    setCount(prev => prev + (type === 'inc' ? 1 : -1));
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Container>
+      <Count>{count}</Count>
+      <ButtonGroup>
+        <button onClick={() => handleClick("inc")} >increment</button>
+        <button onClick={() => handleClick("dec")} >decrement</button>
+      </ButtonGroup>
+    </Container>
+  );
 }
 
-export default App
+export default App;
