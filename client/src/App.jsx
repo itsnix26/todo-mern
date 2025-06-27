@@ -1,25 +1,19 @@
-import { useState } from 'react';
-import Container, { Count, ButtonGroup } from './App.styled.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar.jsx';
+import Home from './pages/Home.jsx';
+import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
 
 function App() {
-
-  const [count, setCount] = useState(0);
-  const [items, setItems] = useState(['Item 1', 'Item 2']);
-  const [user, setUser] = useState({ name: 'John', age: 25 });
-  const [logs, setLogs] = useState([]);
-
-  const handleClick = (type) => {
-    setCount(prev => prev + (type === 'inc' ? 1 : -1));
-  }
-
   return (
-    <Container>
-      <Count>{count}</Count>
-      <ButtonGroup>
-        <button onClick={() => handleClick("inc")} >increment</button>
-        <button onClick={() => handleClick("dec")} >decrement</button>
-      </ButtonGroup>
-    </Container>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
