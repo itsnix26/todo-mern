@@ -1,9 +1,11 @@
+import { PageContainer } from './Contact.styled.js';
+
 function Contact() {
   return (
-    <div style={{ padding: '1rem' }}>
+    <PageContainer>
       <h2>Contact Page</h2>
       <p>Get in touch via contact@example.com.</p>
-    </div>
+    </PageContainer>
   );
 }
 

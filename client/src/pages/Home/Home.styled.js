@@ -6,6 +6,11 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 1rem;
+
+  @media (max-width: 600px) {
+    height: auto;
+  }
 `;
 
 export const Count = styled.p`
@@ -16,6 +21,10 @@ export const Count = styled.p`
 export const ButtonGroup = styled.div`
   display: flex;
   gap: 1rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
-export default Container; 
+export default Container;
