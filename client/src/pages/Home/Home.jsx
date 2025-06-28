@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import Container, { Count, ButtonGroup } from '../App.styled.js';
+import Container, { Count, ButtonGroup } from './Home.styled.js';
 
 function Home() {
   const [count, setCount] = useState(0);
 
   const handleClick = (type) => {
-    setCount(prev => prev + (type === 'inc' ? 1 : -1));
+    setCount((prev) => prev + (type === 'inc' ? 1 : -1));
   };
 
   return (
