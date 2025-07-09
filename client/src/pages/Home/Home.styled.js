@@ -5,7 +5,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   padding: 1rem;
 
   @media (max-width: 600px) {
